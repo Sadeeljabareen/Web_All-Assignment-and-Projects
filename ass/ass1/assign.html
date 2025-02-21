@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assign Ticket</title>
+</head>
+<body>
+    <header>
+        <figure>
+            <img src="Natural_Solutions.png" alt="Natural Solutions Logo" width="100" height="100">
+        </figure>
+        <h1>Maintenance Request System</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="client.html">Home</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="admin.html">Admin Dashboard</a></li>
+            <li><a href="maintenance_request.html">Submit Request</a></li>
+            <li><a href="confirm.html">Confirmation</a></li>
+
+        </ul> 
+    </nav>
+
+    <main>
+        <section>
+            <h2>Assign Ticket #001</h2>
+            <article>
+                <p><strong>Issue Description:</strong> Broken pipe in Bathroom #2</p>
+                <p><strong>Urgency Level:</strong> High</p>
+                <p><strong>Date Submitted:</strong> 2024-10-20</p>
+                <p><strong>Status:</strong> Pending</p>
+            </article>
+
+            <form method="post" action="http://yhassouneh.studentprojects.ritaj.ps/util/process.php">
+                <label for="staff">Assign to Staff Member:</label>
+                <select id="staff" name="staff" required>
+                    <option value="" disabled selected>Choose Staff</option> 
+                    <option value="staff1">Mohammad Hijazi</option>
+                    <option value="staff2">Sami Jabareen</option>
+                    <option value="staff3">Saja Zighari</option>
+                    <option value="staff4">Yazan Taha</option>
+                </select><br><br>
+                <button type="submit">Assign Ticket</button>
+            </form>
+        </section>
+    </main>
+
+    <hr>
+    <footer> 
+        <address>
+            <p>123 Main St, Ramallah, Palestine</p>
+            <p>Contact Us: Phone: 05677354287 | Email: <a href="Email.html">naturalSolutions@gmail.com</a></p>
+        </address>
+        <p>&copy; 2024 Natural Solutions. All rights reserved | <a href="PrivacyPolicy.html">Privacy Policy</a></p>
+    </footer>
+</body>
+</html>

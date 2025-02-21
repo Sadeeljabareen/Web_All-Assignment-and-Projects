@@ -1,0 +1,818 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    background: url('BG.png') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* الصفحة تأخذ على الأقل ارتفاع الشاشة بالكامل */
+}
+
+/* Header styles - Used in header.php */
+header {
+    background-color: rgba(104, 131, 188, 0.8);
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    margin-bottom: 30px; /* تقليل الهامش السفلي */
+    position: relative;
+}
+
+/* ....................................................................... */
+/* User profile link styles - Used in header.php */
+.user-profile-link {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-decoration: none;
+    color: white;
+}
+
+.user-profile-link img {
+    width: 40px;
+    height: auto;
+    cursor: pointer;
+}
+
+.user-profile-link:hover::after {
+    content: attr(title);
+    position: absolute;
+    right: 50%;
+    top: 100%;
+    transform: translateX(50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    white-space: nowrap;
+    z-index: 10;
+}
+
+/* ....................................................................... */
+/* Navigation styles - Used in navigation.php */
+nav {
+    width: 200px;
+    background-color: rgba(121, 167, 211, 0.9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    color: white;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin-bottom: 10px;
+}
+
+nav a {
+    color: white;
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s, border 0.3s;
+}
+
+
+/* Inactive state - Used in navigation.php */
+nav a:not(.active):not(.highlight) {
+    background-color: transparent;
+    color: white;
+}
+
+/* Active state - Used in navigation.php */
+nav a.active {
+    background-color: #8a307f;
+    color: white;
+    border: 1px solid white;
+}
+
+/* Highlight state - Used in navigation.php */
+nav a.highlight {
+    background-color: yellow;
+    color: black;
+    font-weight: bold;
+}
+
+/* Hover effect - Used in navigation.php */
+nav a:hover:not(.active):not(.highlight) {
+    background-color: #8a307f;
+    border: 1px solid white;
+}
+
+/* Smooth transitions - Used in navigation.php */
+nav a {
+    transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+
+
+/* ....................................................................... */
+/* Main content styles - Used in multiple files like dashboard.php, index.php, etc. */
+.main {
+    flex: 1; /* يمتد لملء المساحة المتاحة */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    margin-left: 220px; /* تعديل للتنقل الثابت */
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    margin: auto;
+    border: 1px solid #ddd;
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #8a307f;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: #8a307f;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+
+/* ....................................................................... */
+/* Error message styles - Used in multiple files like login.php, registration_step1.php, etc. */
+.error-message {
+    color: #8a307f;
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+
+/* ....................................................................... */
+/* Form without margin-left - Used in index.php, login.php, etc. */
+.form-no-margin {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.9);
+    margin-left: 0; /* Ensure no margin */
+}
+
+/* Form with margin-left - Used in task_search.php, update_progress.php, etc. */
+.form-with-margin {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.9);
+    margin-left: 20%; /* Add margin */
+}
+
+
+/* ....................................................................... */
+/* Shared form styles - Used in multiple files like login.php, registration_step1.php, etc. */
+form input, form select, form textarea, form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+form button {
+    background-color: #79a7d3;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #8a307f;
+}
+
+
+/* ....................................................................... */
+/* Footer styles - Used in footer.php */
+.footer-style {
+    background-color: rgba(104, 131, 188, 0.8);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    margin-top: auto; /* يدفع الفوتر إلى الأسفل */
+    position: relative;
+}
+
+.footer-style address {
+    font-style: normal;
+    margin-bottom: 10px;
+}
+
+.footer-style a {
+    color: white;
+    text-decoration: underline;
+}
+
+.footer-style a:hover {
+    color: #8a307f;
+    text-decoration: none;
+}
+
+
+/* ....................................................................... */
+/* Profile styles - Used in user_profile.php */
+.profile {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.profile-info {
+    flex: 1;
+}
+
+.profile-info p {
+    margin: 10px 0;
+}
+
+.profile-info p strong {
+    color: #6883bc;
+}
+
+
+/* ....................................................................... */
+/* Table styles - Used in assign_team_members.php, task_search.php, etc. */
+table {
+    width: 80%; /* تقليل عرض الجدول */
+    border-collapse: collapse;
+    margin-left: 20%; /* إزاحة الجدول إلى اليمين */
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #79a7d3;
+    color: white;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+/* Column width adjustments - Used in assign_team_members.php, task_search.php, etc. */
+th:nth-child(1), td:nth-child(1) { /* العمود الأول (Task ID) */
+    width: 10%;
+}
+
+th:nth-child(2), td:nth-child(2) { /* العمود الثاني (Task Name) */
+    width: 20%;
+}
+
+th:nth-child(3), td:nth-child(3) { /* العمود الثالث (Start Date) */
+    width: 15%;
+}
+
+th:nth-child(4), td:nth-child(4) { /* العمود الرابع (Status) */
+    width: 15%;
+}
+
+th:nth-child(5), td:nth-child(5) { /* العمود الخامس (Priority) */
+    width: 15%;
+}
+
+th:nth-child(6), td:nth-child(6) { /* العمود السادس (Action) */
+    width: 25%;
+}
+
+/* Form inside table cells - Used in assign_team_members.php */
+td form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+td form select, td form input[type="number"], td form button {
+    padding: 6px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 100%; /* جعل العناصر تأخذ العرض الكامل */
+}
+
+td form button {
+    background-color: #79a7d3;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: auto; /* عرض الزر يتناسب مع المحتوى */
+}
+
+td form button:hover {
+    background-color: #8a307f;
+}
+
+/* Fieldset styles - Used in accept_task.php, allocate_team_leader.php, etc. */
+fieldset {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+legend {
+    font-weight: bold;
+}
+
+
+/* ....................................................................... */
+/* Button styles - Used in multiple files like login.php, registration_step1.php, etc. */
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Media queries for smaller screens - Used globally */
+@media (max-width: 600px) {
+    nav {
+        width: 150px; /* Adjust for smaller screens */
+    }
+    
+    .main {
+        margin-left: 170px; /* Adjust margin for smaller screens */
+    }
+}
+
+
+/* ....................................................................... */
+/* Task details form styles - Used in accept_task.php */
+.task-details-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.task-details-form fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+.task-details-form legend {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.task-details-form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.task-details-form input[type="text"],
+.task-details-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    font-family: inherit;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.task-details-form textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+.task-details-form input[readonly],
+.task-details-form textarea[readonly] {
+    background-color: #f1f1f1;
+    cursor: not-allowed;
+}
+
+
+/* ....................................................................... */
+/* Accept and Reject button styles - Used in accept_task.php */
+.accept-button,
+.reject-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.accept-button {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+
+.reject-button {
+    background-color: #f44336; /* Red */
+    color: white;
+}
+
+.success {
+    color: green;
+    font-weight: bold;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+
+/* ....................................................................... */
+/* Button styles for Accept and Reject - Used in accept_task.php */
+.accept-button {
+    background-color: #4CAF50; /* Green for accept */
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.accept-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+.reject-button {
+    background-color: #f44336; /* Red for reject */
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.reject-button:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+}
+
+
+/* ....................................................................... */
+/* Ensure buttons are side by side - Used in accept_task.php */
+.task-details-form button {
+    margin: 10px 5px; /* Add some spacing between buttons */
+}
+
+#progressValue {
+    display: inline-block;
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+/* Cancel button styles - Used in confirm_reject.php */
+.cancel-button {
+    background-color: #ccc; /* Gray */
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* ....................................................................... */
+/* Document link styles - Used in allocate_team_leader.php */
+.document-link {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.document-link:hover {
+    text-decoration: underline;
+}
+
+
+/* ....................................................................... */
+/* Small button styles - Used in assign_team_members.php */
+.add-another, .finish-allocation {
+    padding: 6px 12px; /* Reduced padding */
+    font-size: 14px; /* Smaller font size */
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 5px;
+}
+
+.add-another {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+
+.add-another:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+.finish-allocation {
+    background-color: #f44336; /* Red */
+    color: white;
+}
+
+.finish-allocation:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+}
+
+
+/* ....................................................................... */
+/* Search Results Table Styles - Used in task_search.php */
+table {
+    width: 80%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    margin-left: 20%;
+}
+
+table thead tr {
+    background-color: #79a7d3;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+
+table th,
+table td {
+    padding: 12px 15px;
+}
+
+table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+table tbody tr:last-of-type {
+    border-bottom: 2px solid #79a7d3;
+}
+
+table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+
+/* ....................................................................... */
+/* Task Priority Styling - Used in task_search.php */
+.low-priority {
+    background-color: #d4edda !important; /* Green background for low priority */
+    color: #155724; /* Dark green text for contrast */
+}
+
+.medium-priority {
+    background-color: #fff3cd !important; /* Yellow background for medium priority */
+    color: #856404; /* Dark yellow text for contrast */
+}
+
+.high-priority {
+    background-color: #f8d7da !important; /* Red background for high priority */
+    color: #721c24; /* Dark red text for contrast */
+}
+
+/* Task Status Styling - Used in task_search.php */
+.pending {
+    font-style: italic;
+    background-color: #e9ecef !important; /* Gray background for pending status */
+    color: #495057; /* Dark gray text for contrast */
+}
+
+.in-progress {
+    font-weight: bold;
+    background-color: #cce5ff !important; /* Light blue background for in progress status */
+    color: #004085; /* Dark blue text for contrast */
+}
+
+.completed {
+    text-decoration: line-through;
+    border: 2px solid #28a745 !important; /* Green border for completed status */
+    background-color: #f8f9fa !important; /* Light background for completed status */
+    color: #28a745; /* Green text for completed status */
+}
+
+
+/* ....................................................................... */
+/* Column Header Sorting - Used in task_search.php */
+table th {
+    cursor: pointer;
+    position: relative;
+}
+
+table th:hover {
+    background-color: #6883bc;
+}
+
+table th::after {
+    content: '▼';
+    font-size: 0.8em;
+    color: #ffffff;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+table th.sort-asc::after {
+    content: '▲';
+    opacity: 1;
+}
+
+table th.sort-desc::after {
+    content: '▼';
+    opacity: 1;
+}
+
+/* Responsive Table - Used in task_search.php */
+@media screen and (max-width: 768px) {
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+}
+
+
+/* ....................................................................... */
+/* Task Details Page Layout - Used in task_details.php */
+.task-details-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 20px; /* Space between sections */
+    padding: 20px;
+}
+
+.task-details, .team-members {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Task Details Section - Used in task_details.php */
+.task-details p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.task-details p strong {
+    color: #79a7d3;
+}
+
+
+/* ....................................................................... */
+/* Team Members Table - Used in task_details.php */
+.team-members table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-left: 20px; /* إزاحة الجدول إلى اليسار بمقدار 20 بكسل */
+}
+
+.team-members th, .team-members td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.team-members th {
+    background-color: #79a7d3;
+    color: white;
+}
+
+.team-members tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.team-members tr:hover {
+    background-color: #ddd;
+}
+
+/* Image Styling - Used in task_details.php */
+.profile-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.profile-image:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-color: #79a7d3;
+}
+
+/* Status Styling - Used in task_details.php */
+.status-pending {
+    font-style: italic;
+    background-color: #e9ecef;
+    color: #495057;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.status-in-progress {
+    font-weight: bold;
+    background-color: #cce5ff;
+    color: #004085;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.status-completed {
+    text-decoration: line-through;
+    background-color: #d4edda;
+    color: #155724;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+/* Priority Styling - Used in task_details.php */
+.priority-low {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.priority-medium {
+    background-color: #fff3cd;
+    color: #856404;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.priority-high {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
